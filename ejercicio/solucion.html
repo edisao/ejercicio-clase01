@@ -1,0 +1,42 @@
+<html>
+    <body>
+        <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+        <script>
+            mermaid.initialize({ startOnLoad: true });
+        </script>
+
+        <h5>Modelo PSM</h5>
+        <div class="mermaid">
+          classDiagram
+    class Equipo
+    Equipo : +String nombre
+	Equipo : +int tipo_deporte
+	Equipo : +String siglas
+	Equipo : getNombre() string
+	Equipo : setNombre() string
+	Equipo : setTipoDeporte() int
+	Equipo : getSiglas() string
+	Equipo : setSiglas() string
+	
+    class Jugador
+    Jugador : +String nombre
+	Jugador : +String apellido
+	Jugador : getNombre() string
+	Jugador : setNombre() string
+	Jugador : getApellido() string
+	Jugador : setApellido() string
+	
+	class Sancion
+    Sancion : +String observacion
+	Sancion : +Bigdecimal multa
+	Sancion : getObservacion() string
+	Sancion : setObservacion() string
+	Sancion : getMulta() decimal
+	Sancion : setMulta() decimal
+    
+    Equipo "1" --> "*" Jugador
+	Jugador "1" --> "*" Sancion
+
+        </div>
+    </body>
+</html>
